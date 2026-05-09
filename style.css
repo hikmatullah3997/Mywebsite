@@ -939,7 +939,24 @@ nav {
     backdrop-filter: blur(14px);
     position: relative;
     overflow: hidden;
+    min-width: 0;
 }
+.portfolio-featured > * {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.featured-info h3,
+.featured-info > p,
+.featured-info .tag,
+.featured-points li,
+.role-value,
+.role-label {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+.tech-pills { max-width: 100%; overflow: hidden; }
 .portfolio-featured.reverse {
     grid-template-columns: 1fr 1.1fr;
 }
@@ -963,7 +980,6 @@ nav {
     z-index: 0;
     pointer-events: none;
 }
-.portfolio-featured > * { position: relative; z-index: 1; }
 
 .featured-collage {
     position: relative;
@@ -1454,13 +1470,34 @@ nav {
     }
 
     /* Tags + headings sized down */
-    .featured-info .tag { font-size: 0.7rem; }
+    .featured-info { min-width: 0; max-width: 100%; }
+    .featured-info .tag {
+        font-size: 0.7rem;
+        white-space: normal;
+        line-height: 1.5;
+    }
     .featured-info h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         line-height: 1.3;
         word-wrap: break-word;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
-    .featured-info > p { font-size: 0.95rem; line-height: 1.6; }
+    .featured-info > p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+    /* Keep tech pills on a single line each but wrap container */
+    .tech-pills {
+        max-width: 100%;
+        overflow: visible;
+    }
+    .tech-pill {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.4;
+    }
 
     /* Buttons full width on mobile */
     .featured-links {
