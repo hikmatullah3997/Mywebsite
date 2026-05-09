@@ -16,6 +16,36 @@
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ---------- Theme toggle (dark / light) ---------- */
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const THEME_KEY = 'hk-theme';
+
+    const applyTheme = (theme) => {
+        if (theme === 'light') root.setAttribute('data-theme', 'light');
+        else root.removeAttribute('data-theme');
+    };
+
+    const initialTheme = (() => {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (saved === 'light' || saved === 'dark') return saved;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    })();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            localStorage.setItem(THEME_KEY, next);
+        });
+    }
+
+    /* Follow system changes if user hasn't picked manually */
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'light' : 'dark');
+    });
+
     /* ---------- Custom cursor ---------- */
     const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
