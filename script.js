@@ -7,9 +7,32 @@
     'use strict';
 
     /* ---------- Loader ---------- */
+    const loaderText = document.getElementById('loaderText');
+    if (loaderText) {
+        const steps = [
+            { t: 'init portfolio',          d: 600 },
+            { t: 'loading stack: NestJS · Vue 3', d: 700 },
+            { t: 'mounting components',     d: 600 },
+            { t: 'syncing 6 production projects', d: 700 },
+            { t: 'ready ✓',                 d: 600 },
+        ];
+        let i = 0;
+        const cycle = () => {
+            if (i >= steps.length) return;
+            loaderText.style.opacity = 0;
+            setTimeout(() => {
+                loaderText.textContent = steps[i].t;
+                loaderText.style.opacity = 1;
+                i++;
+                setTimeout(cycle, steps[i - 1].d);
+            }, 180);
+        };
+        cycle();
+    }
+
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
-        setTimeout(() => loader && loader.classList.add('done'), 1500);
+        setTimeout(() => loader && loader.classList.add('done'), 3700);
     });
 
     /* ---------- Year ---------- */
