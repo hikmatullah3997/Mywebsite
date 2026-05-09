@@ -7,34 +7,25 @@
     'use strict';
 
     /* ---------- Loader ---------- */
-    const loaderText = document.getElementById('loaderText');
-    if (loaderText) {
-        const steps = [
-            { t: 'opening portfolio',           d: 700 },
-            { t: 'compiling NestJS · Vue 3 · TypeScript', d: 900 },
-            { t: 'rendering components',        d: 700 },
-            { t: 'loading 6 production projects', d: 800 },
-            { t: 'ready — welcome.',            d: 700 },
-        ];
-        let i = 0;
-        const cycle = () => {
-            if (i >= steps.length) return;
-            loaderText.style.opacity = 0;
-            setTimeout(() => {
-                loaderText.textContent = steps[i].t;
-                loaderText.style.opacity = 1;
-                i++;
-                setTimeout(cycle, steps[i - 1].d);
-            }, 200);
-        };
-        // Start typing AFTER the portrait + name + tagline have appeared
-        setTimeout(cycle, 1700);
-    }
+    /* Iron Man HUD: ~6.8s of phases, then glass shatter (1.3s),
+       then DOM removed at ~8.3s. Tighter than before to avoid
+       any awkward pause that feels like the animation re-runs. */
+    const loader = document.getElementById('loader');
+    let loaderDone = false;
+    const finishLoader = () => {
+        if (loaderDone || !loader) return;
+        loaderDone = true;
+        loader.classList.add('done');
+        setTimeout(() => { if (loader) loader.style.display = 'none'; }, 1400);
+    };
 
     window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
-        // Total: 1.7s intro + 5×~0.8s steps ≈ 5.5s; then book splits open
-        setTimeout(() => loader && loader.classList.add('done'), 5500);
+        setTimeout(finishLoader, 6800);
+    });
+
+    /* Skip on click/tap (only if loader hasn't finished yet) */
+    document.addEventListener('click', () => {
+        if (loader && !loaderDone) finishLoader();
     });
 
     /* ---------- Year ---------- */

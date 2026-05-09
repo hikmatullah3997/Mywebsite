@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -30,52 +30,92 @@
         <div class="grid-overlay"></div>
     </div>
 
-    <!-- Page loader — book-style split reveal -->
+    <!-- Iron Man HUD / JARVIS boot loader -->
     <div class="loader" id="loader">
-        <!-- Two panels that split apart like opening a book -->
-        <div class="book-panel book-left"></div>
-        <div class="book-panel book-right"></div>
-        <!-- Center seam glow (the book spine) -->
-        <div class="book-spine"></div>
+        <!-- Phase 1: Scanlines + floating particles + arc reactor -->
+        <div class="hud-scanlines"></div>
+        <div class="hud-vignette"></div>
+        <div class="hud-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
 
-        <div class="loader-stage">
-            <!-- Profile image with drawing ring -->
-            <div class="loader-portrait">
-                <svg class="portrait-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#3b82f6"/>
-                            <stop offset="50%" stop-color="#7c5cff"/>
-                            <stop offset="100%" stop-color="#06b6d4"/>
-                        </linearGradient>
-                    </defs>
-                    <circle class="ring-track" cx="100" cy="100" r="92"
-                            stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/>
-                    <circle class="ring-draw" cx="100" cy="100" r="92"
-                            stroke="url(#ringGrad)" stroke-width="3" fill="none"
-                            stroke-linecap="round" transform="rotate(-90 100 100)"/>
-                </svg>
-                <div class="portrait-img">
-                    <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
-                </div>
-                <div class="portrait-glow"></div>
+        <!-- HUD corner brackets -->
+        <div class="hud-corner hc-tl"></div>
+        <div class="hud-corner hc-tr"></div>
+        <div class="hud-corner hc-bl"></div>
+        <div class="hud-corner hc-br"></div>
+
+        <!-- Arc reactor — profile image with concentric spinning rings -->
+        <div class="arc-reactor">
+            <div class="arc-glow"></div>
+            <div class="arc-ring arc-r1"></div>
+            <div class="arc-ring arc-r2"></div>
+            <div class="arc-ring arc-r3"></div>
+            <div class="arc-ring arc-r4"></div>
+            <div class="arc-core">
+                <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
+                <div class="arc-core-tint"></div>
             </div>
+        </div>
 
-            <!-- Brand name + tagline -->
-            <div class="loader-name">
-                <span class="ln-text">Hikmatullah</span><span class="ln-dot">.</span>
+        <!-- Identity reveal -->
+        <div class="hud-identity">
+            <h1 class="hud-name" aria-label="Hikmatullah">
+                <span>H</span><span>I</span><span>K</span><span>M</span><span>A</span><span>T</span><span>U</span><span>L</span><span>L</span><span>A</span><span>H</span>
+            </h1>
+            <p class="hud-role">DEVELOPER · DESIGNER · ENGINEER</p>
+        </div>
+
+        <!-- System boot — progress + status -->
+        <div class="hud-boot">
+            <div class="hud-progress">
+                <div class="hud-progress-track"></div>
+                <div class="hud-progress-fill"></div>
+                <div class="hud-progress-dot"></div>
             </div>
-            <div class="loader-tagline">Software Engineer · NestJS · Vue.js</div>
+            <ul class="hud-status">
+                <li><span class="status-label">LOADING ASSETS</span><span class="status-ok">[ OK ]</span></li>
+                <li><span class="status-label">INITIALIZING UI</span><span class="status-ok">[ OK ]</span></li>
+                <li><span class="status-label">CONNECTING MODULES</span><span class="status-ok">[ OK ]</span></li>
+                <li><span class="status-label">SUIT READY</span><span class="status-ok">[ OK ]</span></li>
+            </ul>
+        </div>
 
-            <!-- Terminal-style status -->
-            <div class="loader-terminal">
-                <span class="lt-prompt">$</span>
-                <span class="lt-text" id="loaderText">opening portfolio</span>
-                <span class="lt-caret">▌</span>
-            </div>
+        <!-- Phase 4: cyan flash + SUIT UP -->
+        <div class="hud-flash"></div>
+        <div class="hud-suitup">— SUIT UP —</div>
 
-            <!-- Progress bar -->
-            <div class="loader-bar"><span></span></div>
+        <!-- Glass shatter overlay (triggers on .done) -->
+        <div class="glass-shatter">
+            <!-- White crack lines that flash before the shatter -->
+            <svg class="glass-cracks" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <line x1="50" y1="50" x2="0"   y2="0"   stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="50"  y2="0"   stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="100" y2="0"   stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="100" y2="50"  stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="100" y2="100" stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="50"  y2="100" stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="0"   y2="100" stroke="#fff" stroke-width="0.15"/>
+                <line x1="50" y1="50" x2="0"   y2="50"  stroke="#fff" stroke-width="0.15"/>
+                <!-- Secondary jagged cracks -->
+                <line x1="50" y1="50" x2="22"  y2="8"   stroke="#fff" stroke-width="0.1" opacity="0.7"/>
+                <line x1="50" y1="50" x2="78"  y2="8"   stroke="#fff" stroke-width="0.1" opacity="0.7"/>
+                <line x1="50" y1="50" x2="92"  y2="78"  stroke="#fff" stroke-width="0.1" opacity="0.7"/>
+                <line x1="50" y1="50" x2="8"   y2="78"  stroke="#fff" stroke-width="0.1" opacity="0.7"/>
+            </svg>
+            <!-- 8 glass shards (triangular wedges from center) -->
+            <div class="shard s1"></div>
+            <div class="shard s2"></div>
+            <div class="shard s3"></div>
+            <div class="shard s4"></div>
+            <div class="shard s5"></div>
+            <div class="shard s6"></div>
+            <div class="shard s7"></div>
+            <div class="shard s8"></div>
         </div>
     </div>
 
