@@ -1266,10 +1266,7 @@ nav {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .featured-collage.phone-mockup { aspect-ratio: 1; }
-    .phone { transform: rotate(0); width: min(240px, 70%); }
-}
+/* (mobile phone-mockup rules consolidated in the comprehensive mobile pass below) */
 
 /* ---- Role split (Chaman Bazar — co-founder credit) ---- */
 .role-split {
@@ -1429,14 +1426,19 @@ nav {
         position: absolute;
     }
 
-    /* Phone mockup — perfectly centered, smaller */
+    /* Phone mockup — perfectly centered, sized to fit the phone */
     .featured-collage.phone-mockup {
-        aspect-ratio: 1;
-        min-height: 360px;
+        aspect-ratio: auto;
+        min-height: 460px;
+        padding: 20px 0;
     }
     .featured-collage.phone-mockup .phone {
-        width: min(220px, 60%);
+        width: 200px;
+        max-width: 60%;
         transform: rotate(0);
+    }
+    .featured-collage.phone-mockup .phone-glow {
+        inset: 15%;
     }
 
     /* Standard 3-image grid collage — keep as 2x2 grid */
@@ -1494,8 +1496,13 @@ nav {
     .featured-info > p { font-size: 0.9rem; }
     .featured-collage.stack { min-height: 260px; padding-bottom: 70px; }
     .featured-collage.stack .collage-stack-item { width: 82%; }
-    .featured-collage.phone-mockup { min-height: 320px; }
-    .featured-collage.phone-mockup .phone { width: min(200px, 65%); }
+    .featured-collage.phone-mockup { min-height: 420px; padding: 12px 0; }
+    .featured-collage.phone-mockup .phone { width: 180px; max-width: 70%; }
+    .featured-collage.phone-mockup .phone-screen { padding: 28px 10px 10px; }
+    .pi-name { font-size: 0.68rem; }
+    .pi-price { font-size: 0.68rem; }
+    .phone-app-title { font-size: 0.78rem; }
+    .phone-report { font-size: 0.65rem; padding: 8px; }
     .featured-badge {
         font-size: 0.65rem;
         padding: 4px 10px;
