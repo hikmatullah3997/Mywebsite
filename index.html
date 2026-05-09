@@ -102,10 +102,35 @@
             </div>
 
             <div class="hero-image reveal">
-                <div class="image-wrap">
-                    <div class="image-glow"></div>
-                    <div class="image-ring"></div>
-                    <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
+                <div class="image-wrap" id="heroImageWrap">
+                    <!-- Layered glowing aura -->
+                    <div class="aura aura-1"></div>
+                    <div class="aura aura-2"></div>
+                    <div class="aura aura-3"></div>
+
+                    <!-- Outer conic-gradient rotating border -->
+                    <div class="conic-ring"></div>
+                    <!-- Inner dashed ring (counter-rotates) -->
+                    <div class="dashed-ring"></div>
+
+                    <!-- Orbital particles -->
+                    <div class="orbit"><span class="particle"></span></div>
+                    <div class="orbit orbit-2"><span class="particle p2"></span></div>
+                    <div class="orbit orbit-3"><span class="particle p3"></span></div>
+
+                    <!-- The actual photo, gradient framed -->
+                    <div class="image-frame">
+                        <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
+                        <div class="frame-shine"></div>
+                    </div>
+
+                    <!-- Live status badge -->
+                    <div class="image-status">
+                        <span class="status-pulse"></span>
+                        <span class="status-text">Open to work</span>
+                    </div>
+
+                    <!-- Floating tech chips -->
                     <div class="float-chip chip-1"><i class="fab fa-js"></i> JavaScript</div>
                     <div class="float-chip chip-2"><i class="fab fa-node-js"></i> Node.js</div>
                     <div class="float-chip chip-3"><i class="fas fa-briefcase"></i> @ QuickUp</div>

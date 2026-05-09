@@ -34,10 +34,45 @@
     applyTheme(initialTheme);
 
     if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
+        themeBtn.addEventListener('click', (e) => {
             const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            applyTheme(next);
-            localStorage.setItem(THEME_KEY, next);
+
+            // Capture click origin for the circular ripple
+            const r = themeBtn.getBoundingClientRect();
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            const endRadius = Math.hypot(
+                Math.max(cx, window.innerWidth - cx),
+                Math.max(cy, window.innerHeight - cy)
+            );
+
+            // Fallback when View Transitions API isn't supported
+            if (!document.startViewTransition) {
+                applyTheme(next);
+                localStorage.setItem(THEME_KEY, next);
+                return;
+            }
+
+            const transition = document.startViewTransition(() => {
+                applyTheme(next);
+                localStorage.setItem(THEME_KEY, next);
+            });
+
+            transition.ready.then(() => {
+                document.documentElement.animate(
+                    {
+                        clipPath: [
+                            `circle(0px at ${cx}px ${cy}px)`,
+                            `circle(${endRadius}px at ${cx}px ${cy}px)`
+                        ]
+                    },
+                    {
+                        duration: 700,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                        pseudoElement: '::view-transition-new(root)'
+                    }
+                );
+            });
         });
     }
 
