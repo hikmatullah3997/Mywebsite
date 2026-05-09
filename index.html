@@ -30,39 +30,47 @@
         <div class="grid-overlay"></div>
     </div>
 
-    <!-- Page loader -->
+    <!-- Page loader — book-style split reveal -->
     <div class="loader" id="loader">
-        <div class="loader-grid"></div>
+        <!-- Two panels that split apart like opening a book -->
+        <div class="book-panel book-left"></div>
+        <div class="book-panel book-right"></div>
+        <!-- Center seam glow (the book spine) -->
+        <div class="book-spine"></div>
+
         <div class="loader-stage">
-            <!-- Animated SVG logo mark -->
-            <div class="loader-mark">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Profile image with drawing ring -->
+            <div class="loader-portrait">
+                <svg class="portrait-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="lg-g" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#7c5cff"/>
-                            <stop offset="50%" stop-color="#a855f7"/>
-                            <stop offset="100%" stop-color="#22d3ee"/>
+                        <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#3b82f6"/>
+                            <stop offset="50%" stop-color="#7c5cff"/>
+                            <stop offset="100%" stop-color="#06b6d4"/>
                         </linearGradient>
                     </defs>
-                    <rect class="mark-frame" x="6" y="6" width="88" height="88" rx="22"
-                          stroke="url(#lg-g)" stroke-width="2" fill="none"/>
-                    <path class="mark-h" d="M 32 26 L 32 74 M 32 50 L 68 50 M 68 26 L 68 74"
-                          stroke="url(#lg-g)" stroke-width="7" stroke-linecap="round" fill="none"/>
-                    <circle class="mark-orbit" cx="50" cy="6" r="3" fill="#22d3ee"/>
+                    <circle class="ring-track" cx="100" cy="100" r="92"
+                            stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/>
+                    <circle class="ring-draw" cx="100" cy="100" r="92"
+                            stroke="url(#ringGrad)" stroke-width="3" fill="none"
+                            stroke-linecap="round" transform="rotate(-90 100 100)"/>
                 </svg>
+                <div class="portrait-img">
+                    <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
+                </div>
+                <div class="portrait-glow"></div>
             </div>
 
-            <!-- Brand name -->
+            <!-- Brand name + tagline -->
             <div class="loader-name">
-                <span class="ln-text">Hikmatullah</span>
-                <span class="ln-dot">.</span>
+                <span class="ln-text">Hikmatullah</span><span class="ln-dot">.</span>
             </div>
             <div class="loader-tagline">Software Engineer · NestJS · Vue.js</div>
 
             <!-- Terminal-style status -->
             <div class="loader-terminal">
                 <span class="lt-prompt">$</span>
-                <span class="lt-text" id="loaderText">init portfolio</span>
+                <span class="lt-text" id="loaderText">opening portfolio</span>
                 <span class="lt-caret">▌</span>
             </div>
 

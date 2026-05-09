@@ -10,11 +10,11 @@
     const loaderText = document.getElementById('loaderText');
     if (loaderText) {
         const steps = [
-            { t: 'init portfolio',          d: 600 },
-            { t: 'loading stack: NestJS · Vue 3', d: 700 },
-            { t: 'mounting components',     d: 600 },
-            { t: 'syncing 6 production projects', d: 700 },
-            { t: 'ready ✓',                 d: 600 },
+            { t: 'opening portfolio',           d: 700 },
+            { t: 'compiling NestJS · Vue 3 · TypeScript', d: 900 },
+            { t: 'rendering components',        d: 700 },
+            { t: 'loading 6 production projects', d: 800 },
+            { t: 'ready — welcome.',            d: 700 },
         ];
         let i = 0;
         const cycle = () => {
@@ -25,14 +25,16 @@
                 loaderText.style.opacity = 1;
                 i++;
                 setTimeout(cycle, steps[i - 1].d);
-            }, 180);
+            }, 200);
         };
-        cycle();
+        // Start typing AFTER the portrait + name + tagline have appeared
+        setTimeout(cycle, 1700);
     }
 
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
-        setTimeout(() => loader && loader.classList.add('done'), 3700);
+        // Total: 1.7s intro + 5×~0.8s steps ≈ 5.5s; then book splits open
+        setTimeout(() => loader && loader.classList.add('done'), 5500);
     });
 
     /* ---------- Year ---------- */
