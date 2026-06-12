@@ -151,6 +151,25 @@
         ];
         let p = 0, c = 0, deleting = false;
 
+        /* Reserve the height of the tallest phrase so the title never
+           reflows — otherwise the whole page jumps as phrases cycle. */
+        const typedLine = typedEl.closest('.line') || typedEl.parentElement;
+        const reserveHeight = () => {
+            if (!typedLine) return;
+            const current = typedEl.textContent;
+            typedLine.style.minHeight = '';
+            let max = 0;
+            phrases.forEach(w => {
+                typedEl.textContent = w;
+                if (typedLine.offsetHeight > max) max = typedLine.offsetHeight;
+            });
+            typedEl.textContent = current;
+            typedLine.style.minHeight = max + 'px';
+        };
+        reserveHeight();
+        window.addEventListener('resize', reserveHeight, { passive: true });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserveHeight);
+
         const tick = () => {
             const word = phrases[p];
             typedEl.textContent = deleting ? word.substring(0, c--) : word.substring(0, c++);
