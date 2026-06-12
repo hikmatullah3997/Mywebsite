@@ -7,26 +7,17 @@
     'use strict';
 
     /* ---------- Loader ---------- */
-    /* Iron Man HUD: ~6.8s of phases, then glass shatter (1.3s),
-       then DOM removed at ~8.3s. Tighter than before to avoid
-       any awkward pause that feels like the animation re-runs. */
     const loader = document.getElementById('loader');
     let loaderDone = false;
     const finishLoader = () => {
         if (loaderDone || !loader) return;
         loaderDone = true;
         loader.classList.add('done');
-        setTimeout(() => { if (loader) loader.style.display = 'none'; }, 1400);
+        setTimeout(() => { if (loader) loader.style.display = 'none'; }, 500);
     };
-
-    window.addEventListener('load', () => {
-        setTimeout(finishLoader, 6800);
-    });
-
-    /* Skip on click/tap (only if loader hasn't finished yet) */
-    document.addEventListener('click', () => {
-        if (loader && !loaderDone) finishLoader();
-    });
+    /* Hide shortly after the page loads; hard fallback so it never sticks */
+    window.addEventListener('load', () => setTimeout(finishLoader, 500));
+    setTimeout(finishLoader, 3000);
 
     /* ---------- Year ---------- */
     const yearEl = document.getElementById('year');
@@ -96,32 +87,6 @@
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
         if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'light' : 'dark');
     });
-
-    /* ---------- Custom cursor ---------- */
-    const dot = document.getElementById('cursorDot');
-    const ring = document.getElementById('cursorRing');
-    if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-        let rx = mx, ry = my;
-
-        window.addEventListener('mousemove', (e) => {
-            mx = e.clientX; my = e.clientY;
-            dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-        });
-
-        const animateRing = () => {
-            rx += (mx - rx) * 0.18;
-            ry += (my - ry) * 0.18;
-            ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-            requestAnimationFrame(animateRing);
-        };
-        animateRing();
-
-        document.querySelectorAll('a, button, .tilt, .magnetic, .skill, .portfolio-item, .service-item').forEach(el => {
-            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-        });
-    }
 
     /* ---------- Header scroll state ---------- */
     const header = document.getElementById('header');
@@ -227,46 +192,4 @@
         });
     }, { threshold: 0.5 });
     counters.forEach(c => counterIO.observe(c));
-
-    /* ---------- Magnetic buttons ---------- */
-    document.querySelectorAll('.magnetic').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const r = btn.getBoundingClientRect();
-            const x = e.clientX - r.left - r.width / 2;
-            const y = e.clientY - r.top - r.height / 2;
-            btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
-        });
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-        });
-    });
-
-    /* ---------- 3D tilt cards ---------- */
-    document.querySelectorAll('.tilt').forEach(card => {
-        const max = 8;
-        card.addEventListener('mousemove', (e) => {
-            const r = card.getBoundingClientRect();
-            const px = (e.clientX - r.left) / r.width;
-            const py = (e.clientY - r.top) / r.height;
-            const rx = (py - 0.5) * -max * 2;
-            const ry = (px - 0.5) * max * 2;
-            card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
-
-    /* ---------- Parallax orbs (subtle) ---------- */
-    const orbs = document.querySelectorAll('.orb');
-    if (orbs.length && window.matchMedia('(pointer: fine)').matches) {
-        window.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5);
-            const y = (e.clientY / window.innerHeight - 0.5);
-            orbs.forEach((o, i) => {
-                const factor = (i + 1) * 12;
-                o.style.translate = `${x * factor}px ${y * factor}px`;
-            });
-        });
-    }
 })();

@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hikmatullah — Software Engineer & Creative Developer</title>
+    <title>Hikmatullah</title>
     <meta name="description" content="Portfolio of Hikmatullah — Software Engineering student at BUITEMS, building beautiful, performant web experiences." />
+
+    <!-- Favicon — profile photo -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./images/favicon-64.png" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,109 +18,18 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Custom cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-    <!-- Animated background -->
+    <!-- Ambient background -->
     <div class="bg-gradient">
-        <video class="bg-video" autoplay muted loop playsinline preload="metadata"
-               poster="">
-            <source src="./assets/bg-video.mp4" type="video/mp4" />
-        </video>
-        <div class="bg-video-overlay"></div>
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
         <div class="grid-overlay"></div>
     </div>
 
-    <!-- Iron Man HUD / JARVIS boot loader -->
+    <!-- Loader -->
     <div class="loader" id="loader">
-        <!-- Phase 1: Scanlines + floating particles + arc reactor -->
-        <div class="hud-scanlines"></div>
-        <div class="hud-vignette"></div>
-        <div class="hud-particles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <!-- HUD corner brackets -->
-        <div class="hud-corner hc-tl"></div>
-        <div class="hud-corner hc-tr"></div>
-        <div class="hud-corner hc-bl"></div>
-        <div class="hud-corner hc-br"></div>
-
-        <!-- Arc reactor — profile image with concentric spinning rings -->
-        <div class="arc-reactor">
-            <div class="arc-glow"></div>
-            <div class="arc-ring arc-r1"></div>
-            <div class="arc-ring arc-r2"></div>
-            <div class="arc-ring arc-r3"></div>
-            <div class="arc-ring arc-r4"></div>
-            <div class="arc-core">
-                <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
-                <div class="arc-core-tint"></div>
-            </div>
-        </div>
-
-        <!-- Identity reveal -->
-        <div class="hud-identity">
-            <h1 class="hud-name" aria-label="Hikmatullah">
-                <span>H</span><span>I</span><span>K</span><span>M</span><span>A</span><span>T</span><span>U</span><span>L</span><span>L</span><span>A</span><span>H</span>
-            </h1>
-            <p class="hud-role">DEVELOPER · DESIGNER · ENGINEER</p>
-        </div>
-
-        <!-- System boot — progress + status -->
-        <div class="hud-boot">
-            <div class="hud-progress">
-                <div class="hud-progress-track"></div>
-                <div class="hud-progress-fill"></div>
-                <div class="hud-progress-dot"></div>
-            </div>
-            <ul class="hud-status">
-                <li><span class="status-label">LOADING ASSETS</span><span class="status-ok">[ OK ]</span></li>
-                <li><span class="status-label">INITIALIZING UI</span><span class="status-ok">[ OK ]</span></li>
-                <li><span class="status-label">CONNECTING MODULES</span><span class="status-ok">[ OK ]</span></li>
-                <li><span class="status-label">SUIT READY</span><span class="status-ok">[ OK ]</span></li>
-            </ul>
-        </div>
-
-        <!-- Phase 4: cyan flash + SUIT UP -->
-        <div class="hud-flash"></div>
-        <div class="hud-suitup">— SUIT UP —</div>
-
-        <!-- Glass shatter overlay (triggers on .done) -->
-        <div class="glass-shatter">
-            <!-- White crack lines that flash before the shatter -->
-            <svg class="glass-cracks" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <line x1="50" y1="50" x2="0"   y2="0"   stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="50"  y2="0"   stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="100" y2="0"   stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="100" y2="50"  stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="100" y2="100" stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="50"  y2="100" stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="0"   y2="100" stroke="#fff" stroke-width="0.15"/>
-                <line x1="50" y1="50" x2="0"   y2="50"  stroke="#fff" stroke-width="0.15"/>
-                <!-- Secondary jagged cracks -->
-                <line x1="50" y1="50" x2="22"  y2="8"   stroke="#fff" stroke-width="0.1" opacity="0.7"/>
-                <line x1="50" y1="50" x2="78"  y2="8"   stroke="#fff" stroke-width="0.1" opacity="0.7"/>
-                <line x1="50" y1="50" x2="92"  y2="78"  stroke="#fff" stroke-width="0.1" opacity="0.7"/>
-                <line x1="50" y1="50" x2="8"   y2="78"  stroke="#fff" stroke-width="0.1" opacity="0.7"/>
-            </svg>
-            <!-- 8 glass shards (triangular wedges from center) -->
-            <div class="shard s1"></div>
-            <div class="shard s2"></div>
-            <div class="shard s3"></div>
-            <div class="shard s4"></div>
-            <div class="shard s5"></div>
-            <div class="shard s6"></div>
-            <div class="shard s7"></div>
-            <div class="shard s8"></div>
+        <div class="loader-inner">
+            <span class="loader-mark">H</span>
+            <span class="loader-bar"><span class="loader-bar-fill"></span></span>
         </div>
     </div>
 
@@ -183,38 +97,14 @@
             </div>
 
             <div class="hero-image reveal">
-                <div class="image-wrap" id="heroImageWrap">
-                    <!-- Layered glowing aura -->
-                    <div class="aura aura-1"></div>
-                    <div class="aura aura-2"></div>
-                    <div class="aura aura-3"></div>
-
-                    <!-- Outer conic-gradient rotating border -->
-                    <div class="conic-ring"></div>
-                    <!-- Inner dashed ring (counter-rotates) -->
-                    <div class="dashed-ring"></div>
-
-                    <!-- Orbital particles -->
-                    <div class="orbit"><span class="particle"></span></div>
-                    <div class="orbit orbit-2"><span class="particle p2"></span></div>
-                    <div class="orbit orbit-3"><span class="particle p3"></span></div>
-
-                    <!-- The actual photo, gradient framed -->
+                <div class="image-wrap">
                     <div class="image-frame">
-                        <img src="./images/profile/Hikmatullah image.png" alt="Hikmatullah" />
-                        <div class="frame-shine"></div>
+                        <img src="./images/profile/hikmatullah-image.webp" alt="Hikmatullah" loading="lazy" decoding="async" />
                     </div>
-
-                    <!-- Live status badge -->
                     <div class="image-status">
                         <span class="status-pulse"></span>
                         <span class="status-text">Open to work</span>
                     </div>
-
-                    <!-- Floating tech chips -->
-                    <div class="float-chip chip-1"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="float-chip chip-2"><i class="fab fa-node-js"></i> Node.js</div>
-                    <div class="float-chip chip-3"><i class="fas fa-briefcase"></i> @ QuickUp</div>
                 </div>
             </div>
         </div>
@@ -228,18 +118,8 @@
     <!-- Skills marquee -->
     <div class="marquee">
         <div class="marquee-track">
-            <span>NestJS</span><span>★</span><span>Vue 3</span><span>★</span><span>TypeScript</span><span>★</span>
-            <span>Node.js</span><span>★</span><span>Socket.io</span><span>★</span><span>TypeORM</span><span>★</span>
-            <span>Java</span><span>★</span><span>JavaFX</span><span>★</span><span>Python</span><span>★</span>
-            <span>Flask</span><span>★</span><span>YOLOv8</span><span>★</span><span>AI Agents</span><span>★</span>
-            <span>Llama 3.2</span><span>★</span><span>Whisper STT</span><span>★</span><span>ElevenLabs</span><span>★</span>
-            <span>MySQL</span><span>★</span><span>MongoDB</span><span>★</span>
-            <span>NestJS</span><span>★</span><span>Vue 3</span><span>★</span><span>TypeScript</span><span>★</span>
-            <span>Node.js</span><span>★</span><span>Socket.io</span><span>★</span><span>TypeORM</span><span>★</span>
-            <span>Java</span><span>★</span><span>JavaFX</span><span>★</span><span>Python</span><span>★</span>
-            <span>Flask</span><span>★</span><span>YOLOv8</span><span>★</span><span>AI Agents</span><span>★</span>
-            <span>Llama 3.2</span><span>★</span><span>Whisper STT</span><span>★</span><span>ElevenLabs</span><span>★</span>
-            <span>MySQL</span><span>★</span><span>MongoDB</span><span>★</span>
+            <span>NestJS</span><span>Vue 3</span><span>TypeScript</span><span>Node.js</span><span>Socket.io</span><span>TypeORM</span><span>Java</span><span>Python</span><span>Flask</span><span>YOLOv8</span><span>AI Agents</span><span>Computer Vision</span><span>MySQL</span><span>MongoDB</span>
+            <span>NestJS</span><span>Vue 3</span><span>TypeScript</span><span>Node.js</span><span>Socket.io</span><span>TypeORM</span><span>Java</span><span>Python</span><span>Flask</span><span>YOLOv8</span><span>AI Agents</span><span>Computer Vision</span><span>MySQL</span><span>MongoDB</span>
         </div>
     </div>
 
@@ -253,7 +133,7 @@
             <div class="about-content">
                 <div class="about-image reveal">
                     <div class="about-image-frame">
-                        <img src="./images/profile/hikmatullah img.png" alt="About Hikmatullah" />
+                        <img src="./images/profile/hikmatullah-img.webp" alt="About Hikmatullah" loading="lazy" decoding="async" />
                     </div>
                     <div class="about-experience">
                         <span class="exp-num" data-count="3">0</span><span>+</span>
@@ -420,15 +300,15 @@
             <article class="portfolio-featured reveal">
                 <div class="featured-collage stack">
                     <div class="collage-stack-item s1">
-                        <img src="./images/quickup-hrm/hrm-public.png" alt="QuickUp HRM Public Site" />
+                        <img src="./images/quickup-hrm/hrm-public.webp" alt="QuickUp HRM Public Site" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-globe"></i> Public</span>
                     </div>
                     <div class="collage-stack-item s2">
-                        <img src="./images/quickup-hrm/Hrm_client.png" alt="QuickUp HRM Client Dashboard" />
+                        <img src="./images/quickup-hrm/Hrm_client.webp" alt="QuickUp HRM Client Dashboard" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-chart-line"></i> Client</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/quickup-hrm/Hrm-admin.png" alt="QuickUp HRM Admin Panel" />
+                        <img src="./images/quickup-hrm/Hrm-admin.webp" alt="QuickUp HRM Admin Panel" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-lock"></i> Admin</span>
                     </div>
                     <div class="featured-badge"><i class="fas fa-star"></i> Featured · Production</div>
@@ -501,15 +381,15 @@
 
                 <div class="featured-collage stack">
                     <div class="collage-stack-item s1">
-                        <img src="./images/call-agent/callagent.png" alt="Call Agent — Lobby" />
+                        <img src="./images/call-agent/callagent.webp" alt="Call Agent — Lobby" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-headset"></i> Lobby</span>
                     </div>
                     <div class="collage-stack-item s2">
-                        <img src="./images/call-agent/callagent2ndimg.png" alt="Call Agent — In Call" />
+                        <img src="./images/call-agent/callagent2ndimg.webp" alt="Call Agent — In Call" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-phone-volume"></i> In Call</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/call-agent/callagent3edimg.png" alt="Call Agent — Vendor Call" />
+                        <img src="./images/call-agent/callagent3edimg.webp" alt="Call Agent — Vendor Call" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-store"></i> Vendor Call</span>
                     </div>
                     <div class="featured-badge"><i class="fas fa-microchip"></i> AI · Voice Agent</div>
@@ -520,15 +400,15 @@
             <article class="portfolio-featured reveal">
                 <div class="featured-collage stack">
                     <div class="collage-stack-item s1">
-                        <img src="./images/safecity/safecity1.png" alt="SafeCity Dashboard" />
+                        <img src="./images/safecity/safecity1.webp" alt="SafeCity Dashboard" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-shield-halved"></i> Dashboard</span>
                     </div>
                     <div class="collage-stack-item s2">
-                        <img src="./images/safecity/safecity2.png" alt="SafeCity Live Detection" />
+                        <img src="./images/safecity/safecity2.webp" alt="SafeCity Live Detection" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-video"></i> Live Detection</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/safecity/safecity3.png" alt="SafeCity ANPR" />
+                        <img src="./images/safecity/safecity3.webp" alt="SafeCity ANPR" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-car"></i> ANPR</span>
                     </div>
                     <div class="featured-badge"><i class="fas fa-shield-halved"></i> Government Demo · ApexTech</div>
@@ -613,15 +493,15 @@
 
                 <div class="featured-collage stack">
                     <div class="collage-stack-item s1">
-                        <img src="./images/humkam/humkamweb.png" alt="Humkaam Public Web" />
+                        <img src="./images/humkam/humkamweb.webp" alt="Humkaam Public Web" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-globe"></i> Public</span>
                     </div>
                     <div class="collage-stack-item s2">
-                        <img src="./images/humkam/humkamweb3.png" alt="Humkaam Profile" />
+                        <img src="./images/humkam/humkamweb3.webp" alt="Humkaam Profile" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-user-tie"></i> Pro Profile</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/humkam/humkamadmin.png" alt="Humkaam Admin Console" />
+                        <img src="./images/humkam/humkamadmin.webp" alt="Humkaam Admin Console" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-user-shield"></i> Admin</span>
                     </div>
                     <div class="featured-badge"><i class="fas fa-graduation-cap"></i> Final Year Project</div>
@@ -632,11 +512,11 @@
             <article class="portfolio-featured reveal">
                 <div class="featured-collage stack two">
                     <div class="collage-stack-item s1">
-                        <img src="./images/gkb/GKB1.png" alt="GKB Pakwan — Entry" />
+                        <img src="./images/gkb/GKB1.webp" alt="GKB Pakwan — Entry" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-house"></i> Landing</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/gkb/GKB2.png" alt="GKB Pakwan — Module" />
+                        <img src="./images/gkb/GKB2.webp" alt="GKB Pakwan — Module" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-receipt"></i> Orders</span>
                     </div>
                     <div class="featured-badge"><i class="fab fa-java"></i> Java · Desktop App</div>
@@ -683,7 +563,7 @@
             <div class="portfolio-grid">
                 <article class="portfolio-item tilt reveal">
                     <div class="portfolio-img">
-                        <img src="./images/misc/image.png" alt="Simon Says Game" />
+                        <img src="./images/misc/image.webp" alt="Simon Says Game" loading="lazy" decoding="async" />
                         <div class="portfolio-overlay">
                             <a href="https://hikmatullah3997.github.io/Simon-says-Game/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
                         </div>
@@ -698,7 +578,7 @@
 
                 <article class="portfolio-item tilt reveal">
                     <div class="portfolio-img">
-                        <img src="./images/misc/image copy.png" alt="Spotify Clone" />
+                        <img src="./images/misc/image-copy.webp" alt="Spotify Clone" loading="lazy" decoding="async" />
                         <div class="portfolio-overlay">
                             <a href="https://hikmatullah3997.github.io/clone-of-spotify/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
                         </div>
@@ -713,7 +593,7 @@
 
                 <article class="portfolio-item tilt reveal">
                     <div class="portfolio-img">
-                        <img src="./images/misc/image copy 2.png" alt="Photography Site" />
+                        <img src="./images/misc/image-copy-2.webp" alt="Photography Site" loading="lazy" decoding="async" />
                         <div class="portfolio-overlay">
                             <a href="https://hikmatullah3997.github.io/Photograpy-css-project/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
                         </div>
