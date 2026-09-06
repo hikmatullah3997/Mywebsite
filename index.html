@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hikmatullah</title>
-    <meta name="description" content="Portfolio of Hikmatullah — Software Engineering student at BUITEMS, building beautiful, performant web experiences." />
+    <title>Hikmatullah | Software Engineer · NestJS, Vue 3, TypeScript</title>
+    <meta name="description" content="Software Engineer building production systems with NestJS, Node.js, Vue 3 and TypeScript. Developer at QuickUp Software House and co-founder of Ziyaan Technologies, shipping HRM platforms, AI voice agents and government applications." />
+    <link rel="canonical" href="https://hikmatullah3997.github.io/Mywebsite/" />
 
-    <!-- Favicon — profile photo -->
+    <!-- Enable motion styles only when JS is running, so the page still
+         renders for crawlers, AI screeners and no-JS visitors. -->
+    <script>document.documentElement.className += ' js';</script>
+
+    <!-- Social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hikmatullah3997.github.io/Mywebsite/" />
+    <meta property="og:title" content="Hikmatullah | Software Engineer" />
+    <meta property="og:description" content="I build production software that solves real problems. Software Engineer specialising in NestJS, Node.js, Vue 3 and TypeScript." />
+    <meta property="og:image" content="https://hikmatullah3997.github.io/Mywebsite/images/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hikmatullah, Software Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hikmatullah | Software Engineer" />
+    <meta name="twitter:description" content="I build production software that solves real problems. Software Engineer specialising in NestJS, Node.js, Vue 3 and TypeScript." />
+    <meta name="twitter:image" content="https://hikmatullah3997.github.io/Mywebsite/images/og-cover.jpg" />
+
+    <!-- Favicon: profile photo -->
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="./images/favicon-64.png" />
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
@@ -24,6 +43,7 @@
         <div class="orb orb-2"></div>
         <div class="grid-overlay"></div>
     </div>
+
 
     <!-- Loader -->
     <div class="loader" id="loader">
@@ -44,8 +64,8 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#portfolio" class="nav-link">Work</a></li>
-                    <li><a href="#services" class="nav-link">Certificates</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
@@ -70,7 +90,7 @@
                 <h1 class="hero-title">
                     <span class="line reveal-line"><span>Hi, I'm</span></span>
                     <span class="line reveal-line"><span class="gradient-text">Hikmatullah</span></span>
-                    <span class="line reveal-line"><span>I build <span class="typed" id="typed"></span><span class="caret">|</span></span></span>
+                    <span class="line reveal-line"><span>I build <span class="typed" id="typed">NestJS APIs</span><span class="caret">|</span></span></span>
                 </h1>
                 <p class="hero-desc reveal">
                     Software Engineer specialising in
@@ -136,44 +156,26 @@
                         <img src="./images/profile/hikmatullah-img.webp" alt="About Hikmatullah" loading="lazy" decoding="async" />
                     </div>
                     <div class="about-experience">
-                        <span class="exp-num" data-count="3">0</span><span>+</span>
-                        <span class="exp-label">Years of<br/>learning</span>
+                        <span class="exp-num" data-count="3">3</span><span>+</span>
+                        <span class="exp-label">Years building<br/>software</span>
                     </div>
                 </div>
 
                 <div class="about-text reveal">
                     <p>
-                        Hello! I'm <strong>Hikmatullah</strong>, a Software Engineer specialising in
-                        <strong style="color:var(--accent);">NestJS</strong> on the backend and
-                        <strong style="color:var(--accent);">Vue.js (Vue 3)</strong> on the frontend —
-                        the stack I use to ship full-stack products end-to-end. I'm currently pursuing
-                        my Software Engineering degree at <strong>BUITEMS</strong>.
+                        I'm a Software Engineer who builds production-ready full-stack applications with
+                        <strong style="color:var(--accent);">NestJS</strong>,
+                        <strong style="color:var(--accent);">Vue 3</strong> and <strong>TypeScript</strong>.
+                        I work at <strong><a href="https://quickup.uk/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">QuickUp Software House</a></strong>
+                        and co-founded <strong style="color:var(--accent);">Ziyaan Technologies</strong>,
+                        where I ship software for real clients.
                     </p>
                     <p>
-                        I'm a <strong>co-founder of <span style="color:var(--accent);">Ziyaan Technologies</span></strong>,
-                        where my partner Muhammad Waseem and I build software for clients —
-                        most recently <strong>Chaman Bazar</strong>, a government initiative for the
-                        DC Office of Chaman that lets citizens see official commodity prices and
-                        report overcharging shopkeepers. Now live on Google Play.
-                    </p>
-                    <p>
-                        For the past <strong>6 months</strong> I've also been working at
-                        <strong><a href="https://quickup.uk/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">QuickUp Software House</a></strong>,
-                        contributing to real-world products like the <strong>QuickUp HRM</strong> staffing
-                        platform and an <strong>AI voice-call agent</strong> for the support team —
-                        built end-to-end with local Whisper (STT), Llama 3.2 (LLM), and ElevenLabs (TTS).
-                    </p>
-                    <p>
-                        I've also built end-to-end systems on the side — <strong>Humkaam</strong>,
-                        my Final Year Project, is a 3-app marketplace (NestJS + Vue 3 + MySQL) with
-                        real-time chat and booking flows, and <strong>SafeCity</strong> is an AI
-                        video-surveillance platform with YOLOv8 threat detection and ANPR, prepared
-                        as a government-project demo for <strong>ApexTech Software House</strong>.
-                    </p>
-                    <p>
-                        Beyond development I'm exploring <strong>Data Analytics</strong>, aiming to become a skilled
-                        analyst and problem solver. I love coding, learning new technologies, and turning ideas into real
-                        projects.
+                        My work spans staffing platforms, AI voice systems, government applications and
+                        business management software, several of them running in production today. I care
+                        most about backend architecture, applied AI, and building systems that hold up once
+                        real people depend on them. I'm completing my Software Engineering degree at
+                        <strong>BUITEMS</strong>.
                     </p>
 
                     <div class="skills">
@@ -191,24 +193,76 @@
                 </div>
             </div>
 
-            <!-- Stats -->
-            <div class="stats reveal">
-                <div class="stat">
-                    <span class="stat-num" data-count="6">0</span><span>+</span>
-                    <span class="stat-label">Months @ QuickUp</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-num" data-count="15">0</span><span>+</span>
-                    <span class="stat-label">Projects Built</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-num" data-count="10">0</span><span>+</span>
-                    <span class="stat-label">Technologies</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-num" data-count="100">0</span><span>%</span>
-                    <span class="stat-label">Curiosity</span>
-                </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2 class="section-title">Where I've <span class="gradient-text">worked</span></h2>
+                <p class="section-sub">Production software, shipped for real users and paying clients.</p>
+            </div>
+
+            <div class="timeline">
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Software Engineer</h3>
+                            <span class="timeline-period">Sep 2025 &ndash; Present</span>
+                        </div>
+                        <a class="timeline-org" href="https://quickup.uk/" target="_blank" rel="noopener">QuickUp Software House <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <ul class="timeline-points">
+                            <li>Build <strong>QuickUp HRM</strong> across three connected applications: public site, client dashboard and admin portal.</li>
+                            <li>Designed and shipped an <strong>AI voice support agent</strong> that answers real phone calls, running local Whisper (STT), Llama 3.2 (LLM) and ElevenLabs (TTS).</li>
+                            <li>Built backend services and role-based access control in <strong>NestJS</strong> over MySQL, plus the <strong>Vue 3</strong> frontends that consume them.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>NestJS</span><span>Vue 3</span><span>MySQL</span><span>TypeORM</span><span>Whisper</span><span>Llama 3.2</span><span>ElevenLabs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Co-founder &amp; Engineer</h3>
+                            <span class="timeline-period">2025 &ndash; Present</span>
+                        </div>
+                        <span class="timeline-org timeline-org-plain">Ziyaan Technologies &middot; Quetta</span>
+                        <ul class="timeline-points">
+                            <li>Co-founded a software company delivering client projects end-to-end, from requirements through deployment and maintenance.</li>
+                            <li>Built the backend and core systems for <strong>Chaman Bazar</strong>, a government platform for the <strong>DC Office of Chaman</strong> that publishes official commodity prices and lets citizens report overcharging.</li>
+                            <li>Now live on Google Play and used by the public.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>NestJS</span><span>Vue 3</span><span>MySQL</span><span>Play Store</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <div class="timeline-top">
+                            <h3 class="timeline-role">Freelance Software Engineer</h3>
+                            <span class="timeline-period">Client engagement</span>
+                        </div>
+                        <span class="timeline-org timeline-org-plain">GKB / Pakwan &middot; Multi-branch catering business</span>
+                        <ul class="timeline-points">
+                            <li>Gathered requirements directly from the client and designed the architecture for a restaurant and catering management system.</li>
+                            <li>Delivered a <strong>~13,200-line Java/JavaFX application</strong> now in daily use across multiple branches.</li>
+                            <li>Owned the full lifecycle: development, deployment, on-site rollout and ongoing maintenance.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>JavaFX</span><span>MySQL</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -256,24 +310,24 @@
 
                 <div class="featured-info">
                     <span class="tag">Ziyaan Technologies · Government Project · Co-founder</span>
-                    <h3>Chaman Bazar — Official Market Prices for the DC Office of Chaman</h3>
+                    <h3>Chaman Bazar: Official Market Prices for the DC Office of Chaman</h3>
                     <p>
                         A government-backed mobile platform built by my own company,
                         <strong>Ziyaan Technologies</strong>, for the
                         <strong>DC Office of Chaman</strong>. It publishes the official prices of
-                        daily essentials — milk, yogurt, rice, vegetables — and lets citizens
+                        daily essentials (milk, yogurt, rice, vegetables) and lets citizens
                         <strong>report shopkeepers</strong> who sell above the listed price, helping
                         authorities maintain fair market practices.
                     </p>
 
                     <div class="role-split">
                         <div class="role">
-                            <span class="role-label"><i class="fas fa-user"></i> My role — Hikmatullah</span>
-                            <span class="role-value">Backend development & core system logic — pricing data pipeline, reporting workflow, and platform stability.</span>
+                            <span class="role-label"><i class="fas fa-user"></i> My role: Hikmatullah</span>
+                            <span class="role-value">Backend development & core system logic: pricing data pipeline, reporting workflow, and platform stability.</span>
                         </div>
                         <div class="role">
-                            <span class="role-label"><i class="fas fa-user-group"></i> Partner — Muhammad Waseem</span>
-                            <span class="role-value">Frontend design & integration — clean, citizen-friendly mobile interface.</span>
+                            <span class="role-label"><i class="fas fa-user-group"></i> Partner: Muhammad Waseem</span>
+                            <span class="role-value">Frontend design & integration: clean, citizen-friendly mobile interface.</span>
                         </div>
                     </div>
 
@@ -315,10 +369,10 @@
                 </div>
                 <div class="featured-info">
                     <span class="tag">Full-Stack · Multi-Portal · QuickUp Software House</span>
-                    <h3>QuickUp HRM — Hire Reliable Staff in Minutes</h3>
+                    <h3>QuickUp HRM: Hire Reliable Staff in Minutes</h3>
                     <p>
                         A complete staffing & workforce management platform that connects clients with
-                        verified professionals — security guards, cleaners, drivers and more —
+                        verified professionals (security guards, cleaners, drivers and more)
                         nationwide. The product spans three connected applications: a public marketing
                         and quote site, a client dashboard with analytics & bookings, and an admin
                         control panel for managing staff, requests, and operations.
@@ -346,12 +400,12 @@
             <article class="portfolio-featured reverse reveal">
                 <div class="featured-info">
                     <span class="tag">AI Agent · Voice · Full-Stack · QuickUp</span>
-                    <h3>QuickUp Call Agent — AI Voice Phone-Support</h3>
+                    <h3>QuickUp Call Agent: AI Voice Phone-Support</h3>
                     <p>
                         An end-to-end AI voice-call system I built for the QuickUp support team.
                         A rider calls support, the agent identifies them from the database, understands
                         the problem, calls the restaurant on the rider's behalf with a different voice,
-                        gets a decision, and relays it back — all spoken naturally.
+                        gets a decision, and relays it back, all spoken naturally.
                     </p>
 
                     <div class="tech-pills">
@@ -363,9 +417,9 @@
                     </div>
 
                     <ul class="featured-points">
-                        <li><i class="fas fa-check"></i> Two AI voices — agent ↔ vendor (different ElevenLabs profiles)</li>
+                        <li><i class="fas fa-check"></i> Two AI voices: agent ↔ vendor (different ElevenLabs profiles)</li>
                         <li><i class="fas fa-check"></i> Volume-based VAD detects when caller stops speaking</li>
-                        <li><i class="fas fa-check"></i> Local STT + LLM — works offline, $0 per call</li>
+                        <li><i class="fas fa-check"></i> Local STT + LLM: works offline, $0 per call</li>
                         <li><i class="fas fa-check"></i> Persists riders, orders, transcripts to MySQL</li>
                     </ul>
 
@@ -381,15 +435,15 @@
 
                 <div class="featured-collage stack">
                     <div class="collage-stack-item s1">
-                        <img src="./images/call-agent/callagent.webp" alt="Call Agent — Lobby" loading="lazy" decoding="async" />
+                        <img src="./images/call-agent/callagent.webp" alt="Call Agent Lobby" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-headset"></i> Lobby</span>
                     </div>
                     <div class="collage-stack-item s2">
-                        <img src="./images/call-agent/callagent2ndimg.webp" alt="Call Agent — In Call" loading="lazy" decoding="async" />
+                        <img src="./images/call-agent/callagent2ndimg.webp" alt="Call Agent In Call" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-phone-volume"></i> In Call</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/call-agent/callagent3edimg.webp" alt="Call Agent — Vendor Call" loading="lazy" decoding="async" />
+                        <img src="./images/call-agent/callagent3edimg.webp" alt="Call Agent Vendor Call" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-store"></i> Vendor Call</span>
                     </div>
                     <div class="featured-badge"><i class="fas fa-microchip"></i> AI · Voice Agent</div>
@@ -416,13 +470,13 @@
 
                 <div class="featured-info">
                     <span class="tag">Computer Vision · 3-Tier Full-Stack · ApexTech Software House</span>
-                    <h3>SafeCity — AI Video Surveillance System</h3>
+                    <h3>SafeCity: AI Video Surveillance System</h3>
                     <p>
                         An end-to-end intelligent video surveillance platform built solo as a demo
                         for <strong>ApexTech Software House</strong> targeting a government project.
                         It ingests live or recorded camera feeds and automatically detects threats,
                         fights, abandoned bags, loitering, crowd density, and unregistered vehicles
-                        in real time — surfacing every event on a live operations dashboard.
+                        in real time, surfacing every event on a live operations dashboard.
                     </p>
 
                     <div class="tech-pills">
@@ -435,7 +489,7 @@
                     </div>
 
                     <ul class="featured-points">
-                        <li><i class="fas fa-check"></i> Threat/weapon detection — guns, knives, grenades (YOLOv8)</li>
+                        <li><i class="fas fa-check"></i> Threat/weapon detection: guns, knives, grenades (YOLOv8)</li>
                         <li><i class="fas fa-check"></i> Fight detection via distance-oscillation heuristic</li>
                         <li><i class="fas fa-check"></i> ANPR with EasyOCR + MySQL plate-registry lookup</li>
                         <li><i class="fas fa-check"></i> 3-tier architecture · MJPEG streaming · SSE alerts</li>
@@ -455,13 +509,14 @@
             <!-- Featured project 4: Humkaam (FYP) -->
             <article class="portfolio-featured reverse reveal">
                 <div class="featured-info">
-                    <span class="tag">Final Year Project · Marketplace · Full-Stack</span>
-                    <h3>Humkaam — On-Demand Marketplace for Verified Professionals</h3>
+                    <span class="tag">Live Product · Marketplace · Full-Stack</span>
+                    <h3>Humkaam: On-Demand Marketplace for Verified Professionals</h3>
                     <p>
-                        My <strong>Final Year Project</strong> — a full-stack marketplace connecting
-                        clients with verified professionals (electricians, plumbers, tutors, nurses
-                        and more). Three independently deployable apps backed by a single NestJS API
-                        with MySQL, Socket.io real-time chat, and S3-compatible file storage.
+                        A full-stack marketplace connecting clients with verified professionals
+                        (electricians, plumbers, tutors, nurses and more), <strong>now live on the
+                        web and Google Play</strong>. Started as my Final Year Project and shipped
+                        as a real product: three independently deployable apps backed by a single
+                        NestJS API with MySQL, Socket.io real-time chat, and S3-compatible file storage.
                     </p>
 
                     <div class="tech-pills">
@@ -475,18 +530,24 @@
 
                     <ul class="featured-points">
                         <li><i class="fas fa-check"></i> 3 apps: client/pro web · admin console · NestJS API</li>
-                        <li><i class="fas fa-check"></i> Real-time chat — presence, unread badges, read receipts</li>
+                        <li><i class="fas fa-check"></i> Real-time chat: presence, unread badges, read receipts</li>
                         <li><i class="fas fa-check"></i> Booking lifecycle with server-gated reviews (only after completion)</li>
-                        <li><i class="fas fa-check"></i> Admin verification flow — CNIC + documents before discoverability</li>
+                        <li><i class="fas fa-check"></i> Admin verification flow: CNIC + documents before discoverability</li>
                         <li><i class="fas fa-check"></i> Dark mode · mobile-responsive · CASL ability checks</li>
                     </ul>
 
                     <div class="featured-links">
-                        <a href="./docs/Humkaam_Project_Documentation.pdf" target="_blank" rel="noopener" class="btn btn-primary magnetic">
-                            <i class="fas fa-file-pdf"></i> <span>Read Full Documentation</span>
+                        <a href="https://www.humkaam.com/" target="_blank" rel="noopener" class="btn btn-primary magnetic">
+                            <i class="fas fa-globe"></i> <span>Live Site</span>
                         </a>
-                        <a href="https://github.com/hikmatullah3997" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
-                            <i class="fab fa-github"></i> <span>GitHub</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.humkaam.app" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+                            <i class="fab fa-google-play"></i> <span>Google Play</span>
+                        </a>
+                        <a href="https://admin.humkaam.com/auth/login" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+                            <i class="fas fa-lock"></i> <span>Admin Panel</span>
+                        </a>
+                        <a href="./docs/Humkaam_Project_Documentation.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+                            <i class="fas fa-file-pdf"></i> <span>Documentation</span>
                         </a>
                     </div>
                 </div>
@@ -504,7 +565,7 @@
                         <img src="./images/humkam/humkamadmin.webp" alt="Humkaam Admin Console" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-user-shield"></i> Admin</span>
                     </div>
-                    <div class="featured-badge"><i class="fas fa-graduation-cap"></i> Final Year Project</div>
+                    <div class="featured-badge"><i class="fas fa-rocket"></i> Live · Web &amp; Play Store</div>
                 </div>
             </article>
 
@@ -512,11 +573,11 @@
             <article class="portfolio-featured reveal">
                 <div class="featured-collage stack two">
                     <div class="collage-stack-item s1">
-                        <img src="./images/gkb/GKB1.webp" alt="GKB Pakwan — Entry" loading="lazy" decoding="async" />
+                        <img src="./images/gkb/GKB1.webp" alt="GKB Pakwan Entry" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-house"></i> Landing</span>
                     </div>
                     <div class="collage-stack-item s3">
-                        <img src="./images/gkb/GKB2.webp" alt="GKB Pakwan — Module" loading="lazy" decoding="async" />
+                        <img src="./images/gkb/GKB2.webp" alt="GKB Pakwan Module" loading="lazy" decoding="async" />
                         <span class="collage-tag"><i class="fas fa-receipt"></i> Orders</span>
                     </div>
                     <div class="featured-badge"><i class="fab fa-java"></i> Java · Desktop App</div>
@@ -524,13 +585,13 @@
 
                 <div class="featured-info">
                     <span class="tag">Desktop App · Real Business Use · Solo Build</span>
-                    <h3>GKB / Pakwan — Restaurant Management System</h3>
+                    <h3>GKB / Pakwan: Restaurant Management System</h3>
                     <p>
                         A <strong>~13,200-line Java + JavaFX desktop app</strong> built solo for a
                         multi-branch catering business. Manages day-to-day operations across three
                         sales channels (GKB Pakwan, Kebabish Marki, Outer Pakwan), plus a per-person
                         Khata credit ledger, expenses, and sales reporting. Distributed as a single
-                        826 KB fat-JAR — runs by double-clicking <code>GKB.command</code>.
+                        826 KB fat-JAR that runs by double-clicking <code>GKB.command</code>.
                     </p>
 
                     <div class="tech-pills">
@@ -543,10 +604,10 @@
 
                     <ul class="featured-points">
                         <li><i class="fas fa-check"></i> 3 branded order modules with shared schema + cross-page edit</li>
-                        <li><i class="fas fa-check"></i> Khata credit ledger — debits, credits, running balance per person</li>
+                        <li><i class="fas fa-check"></i> Khata credit ledger: debits, credits, running balance per person</li>
                         <li><i class="fas fa-check"></i> Multi-tender outer orders (Cash · Online · Bank · Check) with payment history</li>
                         <li><i class="fas fa-check"></i> Global F8 / Cmd+S save · cached navigation · single-window UX</li>
-                        <li><i class="fas fa-check"></i> Portable: copy the folder, run anywhere — no DB, no installer</li>
+                        <li><i class="fas fa-check"></i> Portable: copy the folder and run anywhere, with no DB and no installer</li>
                     </ul>
 
                     <div class="featured-links">
@@ -560,52 +621,6 @@
                 </div>
             </article>
 
-            <div class="portfolio-grid">
-                <article class="portfolio-item tilt reveal">
-                    <div class="portfolio-img">
-                        <img src="./images/misc/image.webp" alt="Simon Says Game" loading="lazy" decoding="async" />
-                        <div class="portfolio-overlay">
-                            <a href="https://hikmatullah3997.github.io/Simon-says-Game/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="tag">Game · JS</span>
-                        <h3>Simon Says Game</h3>
-                        <p>A memory-based color sequence game that puts your brain on alert.</p>
-                        <a href="https://hikmatullah3997.github.io/Simon-says-Game/" target="_blank" rel="noopener" class="portfolio-link">Play Game <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="portfolio-item tilt reveal">
-                    <div class="portfolio-img">
-                        <img src="./images/misc/image-copy.webp" alt="Spotify Clone" loading="lazy" decoding="async" />
-                        <div class="portfolio-overlay">
-                            <a href="https://hikmatullah3997.github.io/clone-of-spotify/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="tag">UI Clone · HTML/CSS</span>
-                        <h3>Spotify Interface</h3>
-                        <p>A pixel-aware Spotify clone built purely with HTML and CSS.</p>
-                        <a href="https://hikmatullah3997.github.io/clone-of-spotify/" target="_blank" rel="noopener" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="portfolio-item tilt reveal">
-                    <div class="portfolio-img">
-                        <img src="./images/misc/image-copy-2.webp" alt="Photography Site" loading="lazy" decoding="async" />
-                        <div class="portfolio-overlay">
-                            <a href="https://hikmatullah3997.github.io/Photograpy-css-project/" target="_blank" rel="noopener" class="overlay-btn"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="tag">Landing · HTML/CSS</span>
-                        <h3>Photography</h3>
-                        <p>A clean responsive web page tailored for photographers.</p>
-                        <a href="https://hikmatullah3997.github.io/Photograpy-css-project/" target="_blank" rel="noopener" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
         </div>
     </section>
 
@@ -620,15 +635,15 @@
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7418601980593426433/" target="_blank" rel="noopener" class="service-item reveal">
                     <div class="service-icon"><i class="fab fa-java"></i></div>
                     <span class="cert-issuer">Apna College · Shradha Khapra</span>
-                    <h3>Sigma — DSA with Java</h3>
-                    <p>Strengthened Java DSA + Web Development — applied directly to client-delivered desktop apps and websites. Earned both appreciation and surprise on a real-world delivery.</p>
+                    <h3>Sigma: DSA with Java</h3>
+                    <p>Strengthened Java DSA + Web Development, applied directly to client-delivered desktop apps and websites. Earned both appreciation and surprise on a real-world delivery.</p>
                     <span class="service-link">View Certificate Post <i class="fas fa-arrow-up-right-from-square"></i></span>
                 </a>
                 <a href="https://www.linkedin.com/posts/hikmat-ullah-975b34351_webdevelopment-fullstack-apnacollege-activity-7389484948233027584-DWAQ" target="_blank" rel="noopener" class="service-item reveal">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
                     <span class="cert-issuer">Apna College · Shradha Khapra</span>
-                    <h3>Sigma — Full Stack Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Node.js, Express and MongoDB — with hands-on full-stack projects from scratch. The foundation that powers ShiftSmart and my freelance work.</p>
+                    <h3>Sigma: Full Stack Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Node.js, Express and MongoDB, with hands-on full-stack projects from scratch. The foundation that powers ShiftSmart and my freelance work.</p>
                     <span class="service-link">View Certificate Post <i class="fas fa-arrow-up-right-from-square"></i></span>
                 </a>
                 <div class="service-item reveal">

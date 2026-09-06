@@ -1,5 +1,5 @@
 /* =========================================================
-   Hikmatullah — Portfolio JS
+   Hikmatullah - Portfolio JS
    Custom cursor · typing · reveal · counters · tilt · nav
    ========================================================= */
 
@@ -36,7 +36,8 @@
     const initialTheme = (() => {
         const saved = localStorage.getItem(THEME_KEY);
         if (saved === 'light' || saved === 'dark') return saved;
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        /* Dark is the intended default; light is opt-in via the toggle. */
+        return 'dark';
     })();
     applyTheme(initialTheme);
 
@@ -128,6 +129,7 @@
     };
     window.addEventListener('scroll', setActive, { passive: true });
 
+
     /* ---------- Reveal on scroll ---------- */
     const revealEls = document.querySelectorAll('.reveal, .reveal-line');
     const io = new IntersectionObserver((entries) => {
@@ -152,7 +154,7 @@
         let p = 0, c = 0, deleting = false;
 
         /* Reserve the height of the tallest phrase so the title never
-           reflows — otherwise the whole page jumps as phrases cycle. */
+           reflows - otherwise the whole page jumps as phrases cycle. */
         const typedLine = typedEl.closest('.line') || typedEl.parentElement;
         const reserveHeight = () => {
             if (!typedLine) return;
@@ -199,16 +201,21 @@
             const duration = 1600;
             const start = performance.now();
 
+            /* The real figure is already in the HTML so the page reads
+               correctly without JS; format thousands as we count up. */
+            const fmt = (n) => n.toLocaleString('en-US');
+
             const step = (now) => {
                 const t = Math.min((now - start) / duration, 1);
                 const eased = 1 - Math.pow(1 - t, 3);
-                el.textContent = Math.floor(eased * target);
+                el.textContent = fmt(Math.floor(eased * target));
                 if (t < 1) requestAnimationFrame(step);
-                else el.textContent = target;
+                else el.textContent = fmt(target);
             };
             requestAnimationFrame(step);
             counterIO.unobserve(el);
         });
     }, { threshold: 0.5 });
     counters.forEach(c => counterIO.observe(c));
+
 })();

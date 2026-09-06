@@ -1,5 +1,5 @@
 /* =========================================================
-   Hikmatullah — Portfolio
+   Hikmatullah - Portfolio
    Modern dark theme · glassmorphism · gradient mesh
    ========================================================= */
 
@@ -91,10 +91,10 @@ h1, h2, h3, h4 {
     z-index: 2;
 }
 
-.section { padding: 120px 0; }
+.section { padding: 72px 0; }
 
 .section-head {
-    margin-bottom: 70px;
+    margin-bottom: 44px;
     text-align: center;
 }
 
@@ -115,7 +115,7 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================================
-   Background — gradient mesh + grid + orbs
+   Background - gradient mesh + grid + orbs
    ========================================================= */
 .bg-gradient {
     position: fixed;
@@ -150,7 +150,7 @@ h1, h2, h3, h4 {
         linear-gradient(180deg, rgba(7, 7, 11, 0.4), rgba(7, 7, 11, 0.7));
 }
 
-/* On mobile, save battery — hide the video, keep gradient + orbs */
+/* On mobile, save battery - hide the video, keep gradient + orbs */
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
     .bg-video { display: none; }
     .bg-video-overlay { display: none; }
@@ -186,8 +186,11 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================================
-   Loader — minimal
+   Loader - minimal
    ========================================================= */
+/* Without JS nothing would ever remove this overlay, leaving a blank page. */
+html:not(.js) .loader { display: none !important; }
+
 .loader {
     position: fixed;
     inset: 0;
@@ -489,10 +492,12 @@ nav {
 }
 .hero-title .line > span {
     display: inline-block;
+}
+.js .hero-title .line > span {
     transform: translateY(110%);
     transition: transform 0.9s var(--ease);
 }
-.reveal-line.visible > span {
+.js .reveal-line.visible > span {
     transform: translateY(0);
 }
 .line:nth-child(2) > span { transition-delay: 0.1s; }
@@ -543,7 +548,7 @@ nav {
     transform: translateY(-3px);
 }
 
-/* Hero image — clean framed profile */
+/* Hero image - clean framed profile */
 .hero-image {
     display: flex;
     justify-content: center;
@@ -1041,7 +1046,7 @@ nav {
     z-index: 3;
 }
 
-/* Two-image variant — balanced offset so it doesn't look lopsided */
+/* Two-image variant - balanced offset so it doesn't look lopsided */
 .featured-collage.stack.two .collage-stack-item.s1 {
     top: 0; left: 4%;
     transform: rotate(-4deg);
@@ -1235,7 +1240,7 @@ nav {
 
 /* (mobile phone-mockup rules consolidated in the comprehensive mobile pass below) */
 
-/* ---- Role split (Chaman Bazar — co-founder credit) ---- */
+/* ---- Role split (Chaman Bazar - co-founder credit) ---- */
 .role-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1380,7 +1385,7 @@ nav {
     .portfolio-featured > .featured-info,
     .portfolio-featured.reverse > .featured-info { order: 2 !important; }
 
-    /* Stack collage — give it real height on mobile */
+    /* Stack collage - give it real height on mobile */
     .featured-collage.stack {
         display: block;
         height: auto;
@@ -1393,7 +1398,7 @@ nav {
         position: absolute;
     }
 
-    /* Phone mockup — perfectly centered, sized to fit the phone */
+    /* Phone mockup - perfectly centered, sized to fit the phone */
     .featured-collage.phone-mockup {
         aspect-ratio: auto;
         min-height: 460px;
@@ -1408,7 +1413,7 @@ nav {
         inset: 15%;
     }
 
-    /* Standard 3-image grid collage — keep as 2x2 grid */
+    /* Standard 3-image grid collage - keep as 2x2 grid */
     .featured-collage:not(.stack):not(.phone-mockup) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
@@ -1468,11 +1473,11 @@ nav {
     /* Featured points */
     .featured-points li { font-size: 0.88rem; }
 
-    /* Role split (Chaman Bazar) — single column on mobile */
+    /* Role split (Chaman Bazar) - single column on mobile */
     .role-split { grid-template-columns: 1fr; gap: 10px; }
 }
 
-/* Smaller phones — final tweaks */
+/* Smaller phones - final tweaks */
 @media (max-width: 480px) {
     .portfolio-featured,
     .portfolio-featured.reverse {
@@ -1780,12 +1785,12 @@ footer {
 /* =========================================================
    Reveal animations
    ========================================================= */
-.reveal {
+.js .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
-.reveal.visible {
+.js .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1799,11 +1804,11 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 1; transform: none; }
 }
 
 /* =========================================================
-   Beauty pass — noise texture, refined gradients, glow
+   Beauty pass - noise texture, refined gradients, glow
    ========================================================= */
 
 /* Subtle film grain over the whole page for premium feel */
@@ -1837,7 +1842,7 @@ body::before {
 }
 .portfolio-featured:hover::after { opacity: 1; }
 
-/* Section title — animated underline accent */
+/* Section title - animated underline accent */
 .section-title {
     position: relative;
     display: inline-block;
@@ -1868,13 +1873,13 @@ a:focus-visible, button:focus-visible {
 }
 
 /* =========================================================
-   Mobile responsive — comprehensive pass
+   Mobile responsive - comprehensive pass
    ========================================================= */
 
-/* Tablet (≤ 1024px) — tighten spacing */
+/* Tablet (≤ 1024px) - tighten spacing */
 @media (max-width: 1024px) {
-    .section { padding: 90px 0; }
-    .section-head { margin-bottom: 50px; }
+    .section { padding: 60px 0; }
+    .section-head { margin-bottom: 38px; }
     .hero-container { gap: 50px; }
     .image-wrap { width: min(380px, 80%); }
     .float-chip { font-size: 0.78rem; padding: 8px 14px; }
@@ -1884,8 +1889,8 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 768px) {
     body { font-size: 0.95rem; }
     .container { width: 92%; padding: 0 16px; }
-    .section { padding: 70px 0; }
-    .section-head { margin-bottom: 40px; }
+    .section { padding: 52px 0; }
+    .section-head { margin-bottom: 32px; }
     .eyebrow { font-size: 0.78rem; }
 
     /* Hero */
@@ -1904,7 +1909,7 @@ a:focus-visible, button:focus-visible {
     .chip-2 { top: 45%; right: -5%; }
     .chip-3 { bottom: 5%; left: 5%; }
 
-    /* Marquee — slower & smaller */
+    /* Marquee - slower & smaller */
     .marquee { padding: 22px 0; }
     .marquee-track { animation-duration: 50s; gap: 36px; }
     .marquee-track span { font-size: 1.2rem; }
@@ -1938,14 +1943,14 @@ a:focus-visible, button:focus-visible {
     }
     .featured-badge { font-size: 0.68rem; padding: 5px 11px; top: 12px; left: 12px; }
 
-    /* Stack collage — tighter on mobile */
+    /* Stack collage - tighter on mobile */
     .featured-collage.stack {
         aspect-ratio: 1.1 / 1;
         min-height: 280px;
     }
     .collage-stack-item { width: 82%; }
 
-    /* Phone mockup — center, no rotation */
+    /* Phone mockup - center, no rotation */
     .phone { transform: rotate(0); width: min(220px, 65%); }
     .phone:hover { transform: translateY(-4px); }
     .featured-collage.phone-mockup { aspect-ratio: 1; }
@@ -1982,10 +1987,10 @@ a:focus-visible, button:focus-visible {
     .copyright { font-size: 0.82rem; }
 }
 
-/* Small phones (≤ 480px) — final polish */
+/* Small phones (≤ 480px) - final polish */
 @media (max-width: 480px) {
     .container { width: 94%; padding: 0 12px; }
-    .section { padding: 60px 0; }
+    .section { padding: 44px 0; }
 
     .logo-text { display: none; }
     .logo-mark { width: 32px; height: 32px; font-size: 0.95rem; }
@@ -2022,10 +2027,9 @@ a:focus-visible, button:focus-visible {
     .section-title { font-size: 1.8rem; }
 }
 
-/* Hide custom cursor entirely on touch — already handled but enforce */
+/* Hide custom cursor entirely on touch - already handled but enforce */
 @media (hover: none) {
     body { cursor: auto !important; }
-    .cursor-dot, .cursor-ring { display: none !important; }
     /* Keep tap targets generous */
     .nav-link { padding: 14px 18px; }
     .btn { padding: 14px 22px; }
@@ -2059,10 +2063,10 @@ a:focus-visible, button:focus-visible {
     font-size: 0.95rem;
     transition: transform 0.45s var(--ease), opacity 0.3s ease;
 }
-/* Default (dark mode) — show moon, hide sun */
+/* Default (dark mode) - show moon, hide sun */
 .theme-toggle .sun-icon { transform: translateY(120%) rotate(60deg); opacity: 0; }
 .theme-toggle .moon-icon { transform: translateY(0) rotate(0); opacity: 1; color: #c4b5fd; }
-/* Light mode — show sun, hide moon */
+/* Light mode - show sun, hide moon */
 :root[data-theme="light"] .theme-toggle .sun-icon {
     transform: translateY(0) rotate(0); opacity: 1; color: #f59e0b;
 }
@@ -2075,10 +2079,10 @@ a:focus-visible, button:focus-visible {
 }
 
 /* =========================================================
-   Light theme — premium engineering aesthetic (Linear / Vercel / Stripe)
+   Light theme - premium engineering aesthetic (Linear / Vercel / Stripe)
    ========================================================= */
 :root[data-theme="light"] {
-    /* Cool, near-white surfaces — not creamy */
+    /* Cool, near-white surfaces - not creamy */
     --bg: #fafbfd;
     --bg-2: #ffffff;
     --surface: #ffffff;
@@ -2090,12 +2094,12 @@ a:focus-visible, button:focus-visible {
     --text-dim: #3a3f52;
     --text-muted: #6b7184;
     --shadow-lg: 0 24px 60px -18px rgba(15, 18, 32, 0.18);
-    /* Tighter accents — drop the pink dominance */
+    /* Tighter accents - drop the pink dominance */
     --gradient-1: linear-gradient(135deg, #5b4bff 0%, #7c5cff 50%, #22d3ee 100%);
     --gradient-text: linear-gradient(120deg, #5b4bff, #7c5cff 50%, #22d3ee);
 }
 
-/* Background — minimal grid + 2 cool blobs (no pink, no candy) */
+/* Background - minimal grid + 2 cool blobs (no pink, no candy) */
 :root[data-theme="light"] .bg-gradient {
     background:
         radial-gradient(circle at 80% 0%, rgba(91, 75, 255, 0.07), transparent 45%),
@@ -2113,7 +2117,7 @@ a:focus-visible, button:focus-visible {
 :root[data-theme="light"] .bg-video-overlay { display: none; }
 :root[data-theme="light"] body::before { opacity: 0.02; }
 
-/* Header — visibly themed indigo / cyan gradient (not white) */
+/* Header - visibly themed indigo / cyan gradient (not white) */
 :root[data-theme="light"] header {
     background: linear-gradient(135deg,
         rgba(99, 102, 241, 0.12) 0%,
@@ -2167,7 +2171,7 @@ a:focus-visible, button:focus-visible {
     background: rgba(99, 102, 241, 0.06);
     border-color: rgba(99, 102, 241, 0.4);
 }
-/* Logo mark in light mode keeps its gradient — looks great */
+/* Logo mark in light mode keeps its gradient - looks great */
 :root[data-theme="light"] .logo {
     color: var(--text);
 }
@@ -2238,7 +2242,7 @@ a:focus-visible, button:focus-visible {
     border-color: var(--primary);
 }
 
-/* Cards — solid white, sharp borders, soft cool shadow */
+/* Cards - solid white, sharp borders, soft cool shadow */
 :root[data-theme="light"] .portfolio-featured,
 :root[data-theme="light"] .portfolio-item,
 :root[data-theme="light"] .service-item,
@@ -2313,11 +2317,11 @@ a:focus-visible, button:focus-visible {
     color: var(--text);
 }
 
-/* Phone mockup — keep dark since it represents a phone screen */
+/* Phone mockup - keep dark since it represents a phone screen */
 /* (no overrides needed) */
 
 /* =========================================================
-   Profile picture — minimalist clean for light mode
+   Profile picture - minimalist clean for light mode
    No conic gradient, no spinning rings, no orbiting particles.
    Just a clean dark slate frame with a soft single-tone glow.
    ========================================================= */
@@ -2331,7 +2335,7 @@ a:focus-visible, button:focus-visible {
 :root[data-theme="light"] .image-frame::before {
     display: none;
 }
-/* Single subtle glow under the image — no rainbow */
+/* Single subtle glow under the image - no rainbow */
 :root[data-theme="light"] .aura-1 {
     background: radial-gradient(circle at 50% 50%, #6366f1, transparent 65%);
     opacity: 0.12;
@@ -2376,7 +2380,6 @@ a:focus-visible, button:focus-visible {
 :root[data-theme="light"] .loader-bar { background: rgba(15, 23, 42, 0.1); }
 
 /* Cursor */
-:root[data-theme="light"] .cursor-ring { border-color: rgba(15, 23, 42, 0.4); }
 
 /* Smooth theme transition (fallback when View Transitions unavailable) */
 html { transition: background-color 0.4s ease, color 0.4s ease; }
@@ -2386,7 +2389,7 @@ body, header, .portfolio-featured, .portfolio-item, .service-item,
 }
 
 /* =========================================================
-   Theme switch — circular ripple via View Transitions API
+   Theme switch - circular ripple via View Transitions API
    ========================================================= */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -2399,4 +2402,157 @@ body, header, .portfolio-featured, .portfolio-item, .service-item,
 @keyframes theme-ripple-in {
     from { clip-path: circle(0% at var(--ripple-x, 50%) var(--ripple-y, 50%)); }
     to   { clip-path: circle(150% at var(--ripple-x, 50%) var(--ripple-y, 50%)); }
+}
+
+/* =========================================================
+   Experience timeline
+   ========================================================= */
+.section-sub {
+    margin: 12px auto 0;
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    max-width: 52ch;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 0;
+    padding-left: 34px;
+}
+/* The spine */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        var(--primary) 0%,
+        var(--accent) 45%,
+        transparent 100%
+    );
+    opacity: 0.55;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 44px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+    position: absolute;
+    left: -34px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.12);
+}
+.timeline-item:first-child .timeline-dot {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 5px rgba(6, 182, 212, 0.16);
+}
+
+.timeline-body {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    transition: border-color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.timeline-item:hover .timeline-body {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+}
+
+.timeline-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 18px;
+}
+.timeline-role {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 1.22rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+.timeline-period {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.timeline-org {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+}
+.timeline-org i { font-size: 0.72em; margin-left: 3px; }
+.timeline-org[href]:hover { text-decoration: underline; }
+.timeline-org-plain { color: var(--text-dim); }
+
+.timeline-points {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.timeline-points li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 9px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+.timeline-points li:last-child { margin-bottom: 0; }
+.timeline-points li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.75;
+}
+.timeline-points strong { color: var(--text); font-weight: 600; }
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+.timeline-tags span {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .timeline { padding-left: 26px; }
+    .timeline::before { left: 5px; }
+    .timeline-dot { left: -26px; width: 13px; height: 13px; }
+    .timeline-body { padding: 20px 18px; }
+    .timeline-role { font-size: 1.08rem; }
+    .timeline-top { gap: 4px; }
+    .timeline-period { white-space: normal; }
 }
